@@ -9,7 +9,7 @@ package sistemacontable;
  *
  * @author DIEGO
  */
-public class SistemaContable {
+public class Main {
 
     /**
      * @param args the command line arguments
