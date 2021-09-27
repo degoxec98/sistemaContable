@@ -16,6 +16,7 @@ public class FormularioRegistrarUgel extends javax.swing.JInternalFrame {
     private Controlador controlador;
     /**
      * Creates new form registrarUgel
+     * @param ventanaPadre
      */
     public FormularioRegistrarUgel(Ventana ventanaPadre) {
         initComponents();
