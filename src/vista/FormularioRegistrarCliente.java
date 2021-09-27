@@ -10,12 +10,14 @@ package vista;
  * @author DIEGO
  */
 public class FormularioRegistrarCliente extends javax.swing.JInternalFrame {
-
+    private Ventana ventanaPadre;
     /**
      * Creates new form registrarCliente
      */
-    public FormularioRegistrarCliente() {
+    public FormularioRegistrarCliente(Ventana ventanaPadre) {
         initComponents();
+        this.ventanaPadre = ventanaPadre;        
+        
     }
 
     /**
@@ -260,11 +262,11 @@ public class FormularioRegistrarCliente extends javax.swing.JInternalFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormularioRegistrarCliente().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new FormularioRegistrarCliente().setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
