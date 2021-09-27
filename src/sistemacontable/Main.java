@@ -5,6 +5,9 @@
  */
 package sistemacontable;
 
+import controlador.Controlador;
+import vista.Ventana;
+
 /**
  *
  * @author DIEGO
@@ -16,6 +19,10 @@ public class Main {
      */
     public static void main(String[] args) {
         System.out.println("Hola mundo");
+        Controlador controlador = new Controlador();
+        Ventana ventana = new Ventana(controlador);
+        controlador.setVentana(ventana);
+        ventana.setVisible(true);
     }
     
 }

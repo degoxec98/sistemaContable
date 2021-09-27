@@ -9,7 +9,7 @@ package vista;
  *
  * @author DIEGO
  */
-public class FormularioGenerarPlanilla extends javax.swing.JFrame {
+public class FormularioGenerarPlanilla extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form generarPlanilla
