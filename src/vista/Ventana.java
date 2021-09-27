@@ -6,7 +6,7 @@
 package vista;
 
 import controlador.Controlador;
-import javax.swing.JOptionPane;
+import validacion.validacion;
 
 /**
  *
@@ -77,6 +77,7 @@ public class Ventana extends javax.swing.JFrame {
 
         jpLogin.setBackground(new java.awt.Color(255, 255, 255));
 
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel3.setOpaque(false);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/LogoGH.jpeg"))); // NOI18N
@@ -88,6 +89,18 @@ public class Ventana extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 204));
         jLabel3.setText("USUARIO:");
+
+        txtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUsuarioKeyTyped(evt);
+            }
+        });
+
+        txtContrasenia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtContraseniaKeyTyped(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 204));
@@ -158,14 +171,14 @@ public class Ventana extends javax.swing.JFrame {
             .addGroup(jpLoginLayout.createSequentialGroup()
                 .addGap(186, 186, 186)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(258, Short.MAX_VALUE))
+                .addContainerGap(254, Short.MAX_VALUE))
         );
         jpLoginLayout.setVerticalGroup(
             jpLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpLoginLayout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(361, Short.MAX_VALUE))
+                .addContainerGap(369, Short.MAX_VALUE))
         );
 
         jpnCargando.setBackground(new java.awt.Color(255, 255, 255));
@@ -261,6 +274,7 @@ public class Ventana extends javax.swing.JFrame {
         );
 
         btnRegistrarCliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnRegistrarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/registrarClienteIcono.png"))); // NOI18N
         btnRegistrarCliente.setText("Registrar Cliente");
         btnRegistrarCliente.setActionCommand("Administrativos");
         btnRegistrarCliente.setBorderPainted(false);
@@ -291,6 +305,7 @@ public class Ventana extends javax.swing.JFrame {
         });
 
         btnGenerarPlanilla.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnGenerarPlanilla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/generarPlanillaIcono.png"))); // NOI18N
         btnGenerarPlanilla.setText("Generar Planilla");
         btnGenerarPlanilla.setBorderPainted(false);
         btnGenerarPlanilla.setContentAreaFilled(false);
@@ -305,6 +320,7 @@ public class Ventana extends javax.swing.JFrame {
         });
 
         btnAnularContrato.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnAnularContrato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/anularContratoIcono.png"))); // NOI18N
         btnAnularContrato.setText("Anular Contrato");
         btnAnularContrato.setBorderPainted(false);
         btnAnularContrato.setContentAreaFilled(false);
@@ -319,6 +335,7 @@ public class Ventana extends javax.swing.JFrame {
         });
 
         btnModificarCliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnModificarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/modificarClienteIcono.png"))); // NOI18N
         btnModificarCliente.setText("Modificar Cliente");
         btnModificarCliente.setBorderPainted(false);
         btnModificarCliente.setContentAreaFilled(false);
@@ -333,6 +350,7 @@ public class Ventana extends javax.swing.JFrame {
         });
 
         btnRegistrarUgel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnRegistrarUgel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/registrarUgelIcono.png"))); // NOI18N
         btnRegistrarUgel.setText("Registrar Ugel");
         btnRegistrarUgel.setBorderPainted(false);
         btnRegistrarUgel.setContentAreaFilled(false);
@@ -347,6 +365,7 @@ public class Ventana extends javax.swing.JFrame {
         });
 
         btnRegistrarPago.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnRegistrarPago.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/registrarPagoIcono.png"))); // NOI18N
         btnRegistrarPago.setText("Registrar Pago");
         btnRegistrarPago.setBorderPainted(false);
         btnRegistrarPago.setContentAreaFilled(false);
@@ -361,6 +380,7 @@ public class Ventana extends javax.swing.JFrame {
         });
 
         btnRegistrarContrato.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnRegistrarContrato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/iconoContrato.png"))); // NOI18N
         btnRegistrarContrato.setText("Registrar Contrato");
         btnRegistrarContrato.setBorderPainted(false);
         btnRegistrarContrato.setContentAreaFilled(false);
@@ -375,6 +395,7 @@ public class Ventana extends javax.swing.JFrame {
         });
 
         btnGenerarReporte.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnGenerarReporte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/generarReporteIcono.png"))); // NOI18N
         btnGenerarReporte.setText("Generar Reporte");
         btnGenerarReporte.setBorderPainted(false);
         btnGenerarReporte.setContentAreaFilled(false);
@@ -425,21 +446,21 @@ public class Ventana extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(37, 37, 37)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnRegistrarPago, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistrarCliente)
                     .addComponent(btnModificarCliente)
                     .addComponent(btnRegistrarContrato))
-                .addGap(63, 63, 63)
+                .addGap(37, 37, 37)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnGenerarPlanilla)
                     .addComponent(btnAnularContrato)
                     .addComponent(btnRegistrarUgel)
                     .addComponent(btnGenerarReporte))
-                .addGap(47, 47, 47)
+                .addGap(37, 37, 37)
                 .addComponent(btnSalir)
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jpInicioLayout = new javax.swing.GroupLayout(jpInicio);
@@ -477,7 +498,7 @@ public class Ventana extends javax.swing.JFrame {
 
         jitFormularios.setVisible(true);
 
-        jdpFormularios.setBackground(new java.awt.Color(204, 204, 204));
+        jdpFormularios.setBackground(new java.awt.Color(240, 240, 240));
 
         javax.swing.GroupLayout jdpFormulariosLayout = new javax.swing.GroupLayout(jdpFormularios);
         jdpFormularios.setLayout(jdpFormulariosLayout);
@@ -487,7 +508,7 @@ public class Ventana extends javax.swing.JFrame {
         );
         jdpFormulariosLayout.setVerticalGroup(
             jdpFormulariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 633, Short.MAX_VALUE)
+            .addGap(0, 641, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jitFormulariosLayout = new javax.swing.GroupLayout(jitFormularios.getContentPane());
@@ -697,44 +718,20 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistrarClienteActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        
         validar();
     }//GEN-LAST:event_btnIngresarActionPerformed
+
+    private void txtContraseniaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraseniaKeyTyped
+        validacion.validarContra(evt, txtContrasenia.getText(), 30);
+    }//GEN-LAST:event_txtContraseniaKeyTyped
+
+    private void txtUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyTyped
+        //validacion.validarAlfaNumerico(evt, txtUsuario.getText(), 20);
+    }//GEN-LAST:event_txtUsuarioKeyTyped
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Ventana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Ventana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Ventana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Ventana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new Ventana().setVisible(true);
-//            }
-//        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAnularContrato;
