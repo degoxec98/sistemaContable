@@ -16,7 +16,6 @@ public class FormularioRegistrarUgel extends javax.swing.JInternalFrame {
     private Controlador controlador;
     /**
      * Creates new form registrarUgel
-     * @param ventanaPadre
      */
     public FormularioRegistrarUgel(Ventana ventanaPadre) {
         initComponents();
@@ -140,6 +139,8 @@ public class FormularioRegistrarUgel extends javax.swing.JInternalFrame {
                     .addComponent(jButton2))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

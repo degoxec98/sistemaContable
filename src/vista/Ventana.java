@@ -575,9 +575,9 @@ public class Ventana extends javax.swing.JFrame {
         
         if(flag) {
             System.out.println("accedio");
-            if(user().equals("afiliacion")){
+            if(user().equals("cobranzas")){
                 rol = 1;
-            }else if (user().equals("cobranzas")){
+            }else if (user().equals("afiliacion")){
                 rol = 2;
             }else{
                 rol = 3;
@@ -609,7 +609,9 @@ public class Ventana extends javax.swing.JFrame {
     private void deshabilitadBotones(){
         switch(rol){
             case 1:
-                //Afiliacion -> frmPrincipal.jmReportes.setVisible(false); 
+                //Cobranzas
+                //frmPrincipal.jmRegistros.setVisible(false);
+                //frmPrincipal.jmiAContrato.setVisible(false);
                 btnAnularContrato.setEnabled(false);
                 btnModificarCliente.setEnabled(false);
                 btnRegistrarCliente.setEnabled(false);
@@ -618,9 +620,7 @@ public class Ventana extends javax.swing.JFrame {
                 btnRegistrarUgel.setEnabled(false);
                 break;
             case 2:
-                //Cobranzas
-                //frmPrincipal.jmRegistros.setVisible(false);
-                //frmPrincipal.jmiAContrato.setVisible(false);
+                //Afiliacion -> frmPrincipal.jmReportes.setVisible(false);
                 btnGenerarPlanilla.setEnabled(false);
                 btnGenerarReporte.setEnabled(false);
                 break;
@@ -671,6 +671,8 @@ public class Ventana extends javax.swing.JFrame {
         FormularioRegistrarUgel formularioRegistrarUgel = new FormularioRegistrarUgel(this);
         this.jdpFormularios.add(formularioRegistrarUgel);
         formularioRegistrarUgel.rellenar(true,this.controlador);
+        
+        
     }//GEN-LAST:event_btnRegistrarUgelActionPerformed
 
     private void btnModificarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarClienteActionPerformed
