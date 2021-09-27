@@ -18,9 +18,6 @@ public class Ventana extends javax.swing.JFrame {
     public Ventana(Controlador controlador) {
         initComponents();
         
-        //this.jpnFormularios.setVisible(false);
-        //this.jpnPersonal.setVisible(false);
-        //this.setLocationRelativeTo(null);
         this.controlador = controlador;
     }
 
@@ -51,7 +48,6 @@ public class Ventana extends javax.swing.JFrame {
         btnRegistrarContrato = new javax.swing.JButton();
         btnGenerarReporte = new javax.swing.JButton();
         jitFormularios = new javax.swing.JInternalFrame();
-        jpnFormularios = new javax.swing.JPanel();
         jdpFormularios = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -281,7 +277,7 @@ public class Ventana extends javax.swing.JFrame {
                     .addComponent(btnGenerarReporte))
                 .addGap(47, 47, 47)
                 .addComponent(btnSalir)
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jpInicioLayout = new javax.swing.GroupLayout(jpInicio);
@@ -319,38 +315,17 @@ public class Ventana extends javax.swing.JFrame {
 
         jitFormularios.setVisible(true);
 
-        jpnFormularios.setBackground(new java.awt.Color(255, 255, 255));
-
-        jdpFormularios.setBackground(new java.awt.Color(255, 255, 255));
+        jdpFormularios.setBackground(new java.awt.Color(204, 204, 204));
 
         javax.swing.GroupLayout jdpFormulariosLayout = new javax.swing.GroupLayout(jdpFormularios);
         jdpFormularios.setLayout(jdpFormulariosLayout);
         jdpFormulariosLayout.setHorizontalGroup(
             jdpFormulariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
+            .addGap(0, 731, Short.MAX_VALUE)
         );
         jdpFormulariosLayout.setVerticalGroup(
             jdpFormulariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 675, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jpnFormulariosLayout = new javax.swing.GroupLayout(jpnFormularios);
-        jpnFormularios.setLayout(jpnFormulariosLayout);
-        jpnFormulariosLayout.setHorizontalGroup(
-            jpnFormulariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
-            .addGroup(jpnFormulariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jpnFormulariosLayout.createSequentialGroup()
-                    .addComponent(jdpFormularios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        jpnFormulariosLayout.setVerticalGroup(
-            jpnFormulariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 675, Short.MAX_VALUE)
-            .addGroup(jpnFormulariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jpnFormulariosLayout.createSequentialGroup()
-                    .addComponent(jdpFormularios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGap(0, 633, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jitFormulariosLayout = new javax.swing.GroupLayout(jitFormularios.getContentPane());
@@ -358,16 +333,16 @@ public class Ventana extends javax.swing.JFrame {
         jitFormulariosLayout.setHorizontalGroup(
             jitFormulariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jitFormulariosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jpnFormularios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(202, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addComponent(jdpFormularios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jitFormulariosLayout.setVerticalGroup(
             jitFormulariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jitFormulariosLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jpnFormularios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addGap(25, 25, 25)
+                .addComponent(jdpFormularios)
+                .addContainerGap())
         );
 
         jDesktopPane1.add(jitFormularios, "card5");
@@ -385,45 +360,83 @@ public class Ventana extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 764, Short.MAX_VALUE)
+            .addGap(0, 731, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(16, 16, 16)
-                    .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE)
+                    .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 699, Short.MAX_VALUE)
                     .addGap(16, 16, 16)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public void cerrarFormulario() {
+        jitFormularios.setVisible(false);
+        jitInicio.setVisible(true);
+    }
+    
     private void btnGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteActionPerformed
+        this.jitInicio.setVisible(false);
+        this.jitFormularios.setVisible(true);
         
+        FormularioVistaReporte formularioGenerarReporte = new FormularioVistaReporte(this);
+        this.jdpFormularios.add(formularioGenerarReporte);
+        formularioGenerarReporte.rellenar(true,this.controlador);
     }//GEN-LAST:event_btnGenerarReporteActionPerformed
 
     private void btnRegistrarContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarContratoActionPerformed
+        this.jitInicio.setVisible(false);
+        this.jitFormularios.setVisible(true);
         
+        FormularioRegistrarContrato formularioRegistrarContrato = new FormularioRegistrarContrato(this);
+        this.jdpFormularios.add(formularioRegistrarContrato);
+        formularioRegistrarContrato.rellenar(true,this.controlador);
     }//GEN-LAST:event_btnRegistrarContratoActionPerformed
 
     private void btnRegistrarPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarPagoActionPerformed
+        this.jitInicio.setVisible(false);
+        this.jitFormularios.setVisible(true);
         
+        FormularioRegistrarPago formularioRegistrarPago = new FormularioRegistrarPago(this);
+        this.jdpFormularios.add(formularioRegistrarPago);
+        formularioRegistrarPago.rellenar(true,this.controlador);
     }//GEN-LAST:event_btnRegistrarPagoActionPerformed
 
     private void btnRegistrarUgelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarUgelActionPerformed
-//        jitInicio.setVisible(false);
-//        jitEquipos.setVisible(true);
-//        jpnEquipos.setVisible(true);
+        this.jitInicio.setVisible(false);
+        this.jitFormularios.setVisible(true);
+        
+        FormularioRegistrarUgel formularioRegistrarUgel = new FormularioRegistrarUgel(this);
+        this.jdpFormularios.add(formularioRegistrarUgel);
+        formularioRegistrarUgel.rellenar(true,this.controlador);
     }//GEN-LAST:event_btnRegistrarUgelActionPerformed
 
     private void btnModificarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarClienteActionPerformed
+        this.jitInicio.setVisible(false);
+        this.jitFormularios.setVisible(true);
         
+        FormularioModificarCliente formularioModificarCliente = new FormularioModificarCliente(this);
+        this.jdpFormularios.add(formularioModificarCliente);
+        formularioModificarCliente.rellenar(true,this.controlador);
     }//GEN-LAST:event_btnModificarClienteActionPerformed
 
     private void btnAnularContratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnularContratoActionPerformed
+        this.jitInicio.setVisible(false);
+        this.jitFormularios.setVisible(true);
         
+        FormularioAnularContrato formularioAnularContrato = new FormularioAnularContrato(this);
+        this.jdpFormularios.add(formularioAnularContrato);
+        formularioAnularContrato.rellenar(true,this.controlador);
     }//GEN-LAST:event_btnAnularContratoActionPerformed
 
     private void btnGenerarPlanillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarPlanillaActionPerformed
+        this.jitInicio.setVisible(false);
+        this.jitFormularios.setVisible(true);
         
+        FormularioGenerarPlanilla formularioGenerarPlanilla = new FormularioGenerarPlanilla(this);
+        this.jdpFormularios.add(formularioGenerarPlanilla);
+        formularioGenerarPlanilla.rellenar(true,this.controlador);
     }//GEN-LAST:event_btnGenerarPlanillaActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -431,7 +444,12 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarClienteActionPerformed
+        this.jitInicio.setVisible(false);
+        this.jitFormularios.setVisible(true);
         
+        FormularioRegistrarCliente formularioRegistrarCliente = new FormularioRegistrarCliente(this);
+        this.jdpFormularios.add(formularioRegistrarCliente);
+        formularioRegistrarCliente.rellenar(true,this.controlador);
     }//GEN-LAST:event_btnRegistrarClienteActionPerformed
 
     /**
@@ -489,6 +507,5 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jlblNombreUsuario1;
     private javax.swing.JLabel jlblNombresApellidos1;
     private javax.swing.JPanel jpInicio;
-    private javax.swing.JPanel jpnFormularios;
     // End of variables declaration//GEN-END:variables
 }
